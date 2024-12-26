@@ -31,5 +31,6 @@ To get a local copy up and running, follow these simple steps:
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/your-username/your-repository.git
+   git clone https://github.com/habashyabdulrahman/CRUD
+   git
    ```
