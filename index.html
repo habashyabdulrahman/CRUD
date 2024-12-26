@@ -3,9 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CRUD System</title>
+
+    <!-- favicon link -->
+    <link rel="shortcut icon" href="./assets/icon.png" type="image/x-icon">
+    <!-- CSS link -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div class="crud">
+        <!-- Header Section -->
+        <div class="head">
+            <h2>crud</h2>
+            <p>product management system</p>
+        </div>
+
+        <!-- Inputs Section -->
+        <div class="inputs">
+            <input type="text" placeholder="title" id="title">
+
+            <!-- Price Section -->
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+                <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+                <small id="total"></small>
+            </div>
+
+            <input type="number" placeholder="count" id="count">
+            <input type="text" placeholder="category" id="category">
+            <button id="submit">Create</button>
+        </div>
+
+        <!-- Outputs Section -->
+        <div class="outputs">
+            <div class="searchBlock">
+                <input onkeyup="searchData(this.value)" type="text" placeholder="Search" id="search">
+                <div class="btnSearch">
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
+                </div>
+            </div>
+            <div id="deleteAll"></div>
+            <table>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Taxes</th>
+                    <th>Ads</th>
+                    <th>Discount</th>
+                    <th>Total</th>
+                    <th>Count</th>
+                    <th>Category</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+
+                <tbody id="tbody">
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Popup Modal -->
+        <div id="deleteModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>This product has multiple items. Do you want to delete one item or all items?</p>
+                <button id="deleteOne">Delete One</button>
+                <button id="deleteItemAll">Delete All</button>
+            </div>
+        </div>
+    </div>
+    <!-- JS link -->
+    <script src="script.js"></script>
 </body>
 </html>
